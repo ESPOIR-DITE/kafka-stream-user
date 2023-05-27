@@ -1,0 +1,23 @@
+{
+  "namespace": "magicalpipelines",
+  "name": "EntityLifeStages",
+  "type": "record",
+  "fields": [
+    {
+      "name": "created_at",
+      "type": "long"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "birth_date",
+      "type": "long"
+    },
+    {
+      "name": "login_number",
+      "type": "int"
+    }
+  ]
+}

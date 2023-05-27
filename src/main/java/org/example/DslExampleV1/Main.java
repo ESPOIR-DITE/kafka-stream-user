@@ -7,6 +7,8 @@ import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.kstream.Consumed;
 import org.apache.kafka.streams.kstream.KStream;
 import org.example.config.streamEnv.EnvAppConfig;
+import org.example.model.User;
+import org.example.model.UserSerde;
 import org.example.util.AppUtils;
 
 public class Main {
@@ -33,8 +35,7 @@ public class Main {
          * the value is a String type.
          */
 
-//        KStream<Void, String> stream = builder.stream("users", Consumed.with(Serdes.Void(), Serdes.String()));
-        KStream<Void, String> stream = builder.stream("users");
+        KStream<byte[], User> stream = builder.stream("users", Consumed.with(Serdes.ByteArray(), new UserSerde()));
 
         /**
          * Now, it’s time to add a stream processor. Since we’re just printing a simple greeting for
