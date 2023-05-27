@@ -4,7 +4,7 @@ package org.example.config.streamEnv;
 import io.github.cdimascio.dotenv.*;
 
 public class EnvAppConfig implements EnvApp {
-    private  Dotenv dotenv = Dotenv.load();
+    private final Dotenv dotenv = Dotenv.load();
 
     @Override
     public String topic() {
